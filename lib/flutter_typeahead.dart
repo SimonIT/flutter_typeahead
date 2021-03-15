@@ -936,6 +936,7 @@ class _TypeAheadFieldState<T> extends State<TypeAheadField<T>>
         enableInteractiveSelection:
             widget.textFieldConfiguration.enableInteractiveSelection,
         readOnly: widget.hideKeyboard,
+        autofillHints: widget.textFieldConfiguration.autofillHints,
       ),
     );
   }
@@ -1472,6 +1473,11 @@ class TextFieldConfiguration {
   /// Same as [TextField.textInputAction](https://docs.flutter.io/flutter/material/TextField/textInputAction.html)
   final TextInputAction? textInputAction;
 
+  /// A list of strings that helps the autofill service identify the type of this text input.
+  ///
+  /// Same as [TextField.autofillHints](https://docs.flutter.io/flutter/material/TextField/autofillHints.html)
+  final Iterable<String> autofillHints;
+
   final bool enableInteractiveSelection;
 
   /// Creates a TextFieldConfiguration
@@ -1505,6 +1511,7 @@ class TextFieldConfiguration {
     this.textDirection,
     this.scrollPadding: const EdgeInsets.all(20.0),
     this.enableInteractiveSelection: true,
+    this.autofillHints,
   });
 
   /// Copies the [TextFieldConfiguration] and only changes the specified
@@ -1538,7 +1545,8 @@ class TextFieldConfiguration {
       TextCapitalization? textCapitalization,
       TextDirection? textDirection,
       TextInputAction? textInputAction,
-      bool? enableInteractiveSelection}) {
+      bool? enableInteractiveSelection,
+      Iterable<String> autofillHints}) {
     return TextFieldConfiguration(
       decoration: decoration ?? this.decoration,
       style: style ?? this.style,
@@ -1570,6 +1578,7 @@ class TextFieldConfiguration {
       textDirection: textDirection ?? this.textDirection,
       enableInteractiveSelection:
           enableInteractiveSelection ?? this.enableInteractiveSelection,
+      autofillHints: autofillHints ?? this.autofillHints,
     );
   }
 }
