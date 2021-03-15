@@ -1170,7 +1170,7 @@ class CupertinoTextFieldConfiguration {
   final Brightness? keyboardAppearance;
   final EdgeInsets scrollPadding;
   final bool enableInteractiveSelection;
-  final Iterable<String> autofillHints;
+  final Iterable<String>? autofillHints;
 
   /// Creates a CupertinoTextFieldConfiguration
   const CupertinoTextFieldConfiguration({
@@ -1249,7 +1249,7 @@ class CupertinoTextFieldConfiguration {
     Brightness? keyboardAppearance,
     EdgeInsets? scrollPadding,
     bool? enableInteractiveSelection,
-    Iterable<String> autofillHints,
+    Iterable<String>? autofillHints,
   }) {
     return CupertinoTextFieldConfiguration(
       controller: controller ?? this.controller,

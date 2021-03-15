@@ -1476,7 +1476,7 @@ class TextFieldConfiguration {
   /// A list of strings that helps the autofill service identify the type of this text input.
   ///
   /// Same as [TextField.autofillHints](https://docs.flutter.io/flutter/material/TextField/autofillHints.html)
-  final Iterable<String> autofillHints;
+  final Iterable<String>? autofillHints;
 
   final bool enableInteractiveSelection;
 
@@ -1546,7 +1546,7 @@ class TextFieldConfiguration {
       TextDirection? textDirection,
       TextInputAction? textInputAction,
       bool? enableInteractiveSelection,
-      Iterable<String> autofillHints}) {
+      Iterable<String>? autofillHints}) {
     return TextFieldConfiguration(
       decoration: decoration ?? this.decoration,
       style: style ?? this.style,
